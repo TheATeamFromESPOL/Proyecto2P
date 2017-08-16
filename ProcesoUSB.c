@@ -1,5 +1,9 @@
 #include <libudev.h>
+#include <mtab.h>
 #include <stdio.h>
+
+struct udev_device* obtener_hijo(struct udev* udev, struct udev_device* padre, const char* subsistema);
+static void enumerar_disp_alm_masivo(struct udev* udev);
 
 struct udev_device* obtener_hijo(struct udev* udev, struct udev_device* padre, const char* subsistema){
 	struct udev_device* hijo = NULL;
@@ -67,3 +71,8 @@ static void enumerar_disp_alm_masivo(struct udev* udev){
 	udev_enumerate_unref(enumerar);
 }
 
+int main(int argc, char *argv[]){
+	while(1){
+		
+	}
+}
