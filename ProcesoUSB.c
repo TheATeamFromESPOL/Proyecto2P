@@ -5,6 +5,13 @@
 
 //Hay que hacer sudo apt-get install libudev_dev
 
+//Estructura que guardara la informacion de los usb
+struct typedef struct usb_TDA{
+	char *block;
+	char *noUsb;
+	char *scsi;
+} usb;
+
 struct udev_device* obtener_hijo(struct udev* udev, struct udev_device* padre, const char* subsistema);
 
 static void enumerar_disp_alm_masivo(struct udev* udev);
@@ -79,6 +86,7 @@ int main(int argc, char *argv[]){
 	while(1){
 		struct udev *u = udev_new();
 		enumerar_disp_alm_masivo(u);
+		sleep(2);
 	}
 	return 0;
 
