@@ -1,9 +1,10 @@
-all: Usb
+all: ProcesoUSB servidor 
 
 
-Usb: ProcesoUSB.c
+ProcesoUSB: ProcesoUSB.c
 	gcc -Wall -g ProcesoUSB.c -o Usb -ludev
 
+.PHONY:clean
 clean:
 	rm Servidor
 	rm Usb
