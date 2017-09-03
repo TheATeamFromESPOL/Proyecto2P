@@ -83,8 +83,8 @@ static void enumerar_disp_alm_masivo(struct udev* udev){
 }
 
 int main(int argc, char *argv[]){
+	struct udev *u = udev_new();	
 	while(1){
-		struct udev *u = udev_new();
 		enumerar_disp_alm_masivo(u);
 		sleep(2);
 	}
