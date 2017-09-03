@@ -4,8 +4,11 @@
 #include <microhttpd.h>
 #include <stdio.h>
 #include <string.h>
-//----
+
 #define PORT 8888
+#define buflen 100
+char *ip = "127.0.0.1";
+
 
 
 int answer_to_connection (void *cls, struct MHD_Connection *connection, const char *url, const char *method, const char *version,
@@ -23,12 +26,21 @@ int answer_to_connection (void *cls, struct MHD_Connection *connection, const ch
 }
 
 int main (){
-  	struct MHD_Daemon *daemon;
+  	/*struct MHD_Daemon *daemon;
 	daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY, PORT, NULL, NULL,&answer_to_connection,NULL, MHD_OPTION_END);
   	if (NULL == daemon) return 1;
 
 	getchar ();
 
   	MHD_stop_daemon (daemon);
-  	return 0;
+  	return 0;*/
+
+	int socketServidor;
+	struct sockaddr_in direccionServidor=(sockaddr_in)malloc(sizeof(sockaddr_in));
+
+	direccionServidor.sin_family = AF_INET;
+	direccionServidor.sin_port = htons(PORT);
+	direccionServidor.sin_addr.s_addr = inet_addr(ip);
+
+	
 }
