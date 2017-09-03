@@ -3,8 +3,6 @@
 #include <mntent.h>
 #include <unistd.h>
 
-//Hay que hacer sudo apt-get install libudev_dev
-
 //Estructura que guardara la informacion de los usb
 struct typedef struct usb_TDA{
 	char *block;

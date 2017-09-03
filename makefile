@@ -1,8 +1,8 @@
 all: ProcesoUSB servidor 
 
 
-ProcesoUSB: ProcesoUSB.c
-	gcc -Wall -g ProcesoUSB.c -o Usb -ludev
+ProcesoUSB: ./src/ProcesoUSB.c
+	gcc -Wall -g ./src/ProcesoUSB.c -o Usb -ludev
 
 .PHONY:clean
 clean:
